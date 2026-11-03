@@ -26,6 +26,8 @@ from urllib.request import Request, build_opener, HTTPRedirectHandler
 from zoneinfo import ZoneInfo
 
 ORIGIN = 'https://canvas.example.edu'
+MAX_API_BYTES = 16 * 1024 * 1024
+MAX_DOWNLOAD_BYTES = 100 * 1024 * 1024
 SECRET_KEYS = re.compile(r'token|secret|password|authorization|cookie|secure_params|preview_url|verifier|signature|credential', re.I)
 SAFE_QUERY = {'page', 'per_page', 'include[]', 'context_codes[]', 'start_date', 'end_date', 'section', 'idpCode', 'module_item_id', 'docID', 'pq-origsite', 'chapter', 'id', 'list', 'doi', 'lang', 'tab', 'usp', 'wrap'}
 
@@ -110,6 +112,21 @@ class CollectionError(Exception):
     pass
 
 
+def read_limited(response, limit):
+    length = response.headers.get('Content-Length')
+    if length is not None:
+        try:
+            size = int(length)
+        except ValueError:
+            raise CollectionError('Invalid response length') from None
+        if size < 0 or size > limit:
+            raise CollectionError('Response exceeds the configured size limit')
+    body = response.read(limit + 1)
+    if len(body) > limit:
+        raise CollectionError('Response exceeds the configured size limit')
+    return body
+
+
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         return None
@@ -134,7 +151,7 @@ class Client:
                 headers['Authorization'] = 'Bearer ' + self.token
             try:
                 with self.opener.open(Request(url, headers=headers, method='GET'), timeout=30) as response:
-                    return response.read(), response.headers
+                    return read_limited(response, MAX_API_BYTES), response.headers
             except HTTPError as error:
                 if error.code in (301, 302, 303, 307, 308):
                     # API redirects normally mean login; never forward a token.
@@ -188,7 +205,7 @@ class Client:
                 raise CollectionError('Unsafe file download URL')
             try:
                 with self.opener.open(Request(url, headers={'User-Agent': 'Canvas-Study-Companion/1'}, method='GET'), timeout=30) as response:
-                    body = response.read()
+                    body = read_limited(response, MAX_DOWNLOAD_BYTES)
                     content_type = response.headers.get('Content-Type', '')
                     if 'text/html' in content_type or body.lstrip().lower().startswith((b'<!doctype html', b'<html')):
                         raise CollectionError('Download returned HTML; use original-site login')

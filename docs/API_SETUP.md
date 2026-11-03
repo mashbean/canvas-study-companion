@@ -18,6 +18,8 @@ python3 scripts/setup_token.py
 
 Paste the token only at the hidden input prompt. This stores it outside the repository at `~/.config/canvas-study-companion/canvas.env`. On macOS/Linux the directory has mode 700 and the file 600. On Windows, confirm the file's ACL limits access to your account; an OS credential store is also suitable. The helper refuses non-interactive input and never prints the token.
 
+Custom secret paths must also be outside every Git repository. The helper rejects repository paths and symlink destinations before asking for a token, and replaces an existing secret file atomically.
+
 The collector accepts `CANVAS_ACCESS_TOKEN` from its environment or reads the secret file. Prefer an OS credential-store integration or the helper; never type a literal token into a shell command. `--secret-file` accepts a path, never the secret value. A personal token may have broader account privileges, even though this collector performs only GET requests.
 
 Do not paste credentials into chat, put them in config/, commit them, or embed them in a webpage. Do not collect classmates' tokens. A multi-user application requires approved OAuth; this template does not implement that service.
@@ -57,5 +59,6 @@ The collector follows [HTTP Link pagination](https://developerdocs.instructure.c
 - **429 / temporary server errors:** bounded retries are built in. A longer delay is reported rather than silently omitting records.
 - **Library, LTI or Inspera:** use separate authorized access. A Canvas token cannot replace those services.
 - **Network sandbox restrictions:** use the coding assistant's normal network-permission mechanism. Do not confuse a network block with an invalid token.
+- **Response size limit:** JSON responses are limited to 16 MiB and individual downloads to 100 MiB. An oversized response becomes an explicit collection gap; obtain that original through its authorized website instead.
 
 For an already authorized browser fallback, record the method as `browser_session_api`; do not extract browser cookies or pretend it was an independent token test. `--import-browser` accepts sanitized evidence and intentionally marks coverage partial.

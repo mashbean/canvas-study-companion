@@ -64,6 +64,10 @@ This public repository contains **only reusable code, instructions and synthetic
 
 The generated reader has no API token, no analytics, and no network collection code. Serve it on loopback using the included server. Keep the same hostname and port to retain browser storage; export progress before switching devices or browser profiles.
 
+The local server rejects foreign host/origin headers, cross-site browser requests, hidden files, directory listings and links outside the reader folder. It sends no-cache, no-referrer and anti-framing headers. Open a generated reader URL such as `/demo/`; the server root does not list your folders. This is a personal local tool, not an authenticated multi-user hosting service: other software or accounts on the same computer may still access localhost and unencrypted browser storage.
+
+When contributing, use your GitHub `noreply` address if you do not want your email in public commit metadata. `.gitignore` protects excluded files, not author identities or material already committed to Git history.
+
 Personal token availability depends on your institution. Manual tokens are for permitted personal development; a shared multi-user service requires institution-approved OAuth. Do not send your token to a classmate or paste it into chat. See [Canvas authentication documentation](https://developerdocs.instructure.com/services/canvas/oauth2/file.oauth).
 
 This project is independent and is not endorsed by Oxford, Instructure, or any university. Course and publisher rights still apply. The MIT licence covers this template and its original demo, not third-party course content.
