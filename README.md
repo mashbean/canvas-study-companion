@@ -19,7 +19,15 @@ The assistant will ask for your own course links, timetable, groups, language an
 
 The interface is in English; translation content and language direction are configurable. An assistant can also localize interface labels if requested.
 
-![Bilingual reading view with a fixed highlight toolbar and an original demo diagram](docs/reader-preview.png)
+## Screenshots
+
+Actual screenshots of the running demo. Click an image to view it at full size. All readings and sample notes are fictional; Spanish is shown as one example of a preferred translation language.
+
+| Weekly overview | Bilingual reading and highlights |
+| --- | --- |
+| [![Weekly overview with reading progress](docs/screenshots/01-weekly-overview.png)](docs/screenshots/01-weekly-overview.png) | [![English paragraphs followed by Spanish translations, with a saved highlight](docs/screenshots/02-bilingual-reader.png)](docs/screenshots/02-bilingual-reader.png) |
+| **English seminar practice** | **Reading catalogue** |
+| [![Seminar questions and a short English explanation](docs/screenshots/03-seminar-practice.png)](docs/screenshots/03-seminar-practice.png) | [![Searchable reading catalogue with source and translation status](docs/screenshots/04-reading-catalogue.png)](docs/screenshots/04-reading-catalogue.png) |
 
 ## Try the synthetic demo
 
