@@ -1,0 +1,16 @@
+# Personal material is local only. Publish the template, not your study data.
+data/
+site/
+config/
+.env
+.env.*
+!.env.example
+*.env
+*.key
+*.pem
+node_modules/
+__pycache__/
+.venv/
+.DS_Store
+test-results/
+playwright-report/

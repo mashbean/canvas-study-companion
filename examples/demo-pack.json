@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "project_id": "synthetic-demo",
+  "title": "Your weekly reading room",
+  "week": "2026-11-02",
+  "week_label": "DEMO WEEK",
+  "timezone": "Europe/London",
+  "language": {"name": "Español", "code": "es", "direction": "ltr", "mode": "bilingual-full"},
+  "assets": ["assets/choices.png"],
+  "guide": {
+    "title": "Prepare, reflect, discuss.",
+    "intro": "An original fictional lesson about public choices. This example contains no university materials or real student data.",
+    "intro_translation": "Una lección ficticia y original sobre decisiones públicas. Este ejemplo no contiene materiales universitarios ni datos reales de estudiantes.",
+    "verification": "DEMO ONLY — dates, course, tasks and requirements below are invented. Replace them with your verified course sources.",
+    "sessions": [{"title": "Public choices: introduction", "when": "Monday · example session", "group": "Example group", "preparation": "Read the example and prepare one objection to its reasoning.", "translation": "Lee el ejemplo y prepara una objeción a su razonamiento."}],
+    "actions": [{"kind": "Suggested study time", "when": "Before the example session", "text": "Allow 15 minutes for the reading and 5 minutes for your own explanation."}],
+    "gaps": ["The optional item demonstrates how to show an unavailable source without inventing its contents."],
+    "phrases": [["The argument depends on…", "El argumento depende de…"], ["A possible counterexample is…", "Un posible contraejemplo es…"], ["This does not necessarily imply…", "Esto no implica necesariamente…"]]
+  },
+  "documents": [
+    {
+      "id": "DEMO-01", "title": "A small decision with competing uses", "author": "Canvas Study Companion contributors",
+      "course": "Example: Public choices", "session": "Example session 1", "status": "Required", "source_category": "Synthetic required reading",
+      "requirement_basis": "Invented for this demo; not an instructor requirement.", "pages": "Example pages 1–2", "source_url": "https://github.com/mashbean/canvas-study-companion/blob/main/examples/demo-pack.json",
+      "content_kind": "full-text", "access_status": "Included: original demo text", "translation_coverage": "Complete Spanish translation of this original demo",
+      "checked_at": "2026-11-03", "official_deadline": null, "suggested_read_by": "Before the example session",
+      "questions": ["Which assumptions would you challenge?", "Who benefits, and who bears the costs?", "Would a different distribution of benefits change your judgement?"],
+      "units": [
+        {"id": "demo-page-1", "label": "Page 1 · Competing uses", "flow": [
+          {"id": "demo-choice-1", "en": "<p>A town has one room available on Saturday. It could offer a language class or a repair workshop. Choosing either activity means giving up the other use of the room.</p>", "translation": "<p>Un pueblo dispone de una sala el sábado. Podría ofrecer una clase de idiomas o un taller de reparación. Elegir cualquiera de las dos actividades significa renunciar al otro uso de la sala.</p>"},
+          {"id": "demo-choice-2", "en": "<p>The <strong>opportunity cost</strong> is the value of the best alternative that is given up. It is not necessarily the amount of money paid. A free room still has an opportunity cost when another valuable activity could use it.</p>", "translation": "<p>El <strong>coste de oportunidad</strong> es el valor de la mejor alternativa a la que se renuncia. No equivale necesariamente al dinero pagado. Una sala gratuita sigue teniendo un coste de oportunidad si otra actividad valiosa podría utilizarla.</p>"},
+          {"id": "demo-choice-image", "en": "<figure><img src=\"assets/choices.png\" alt=\"One room with two competing uses: language class and repair workshop\"><figcaption>Original demonstration figure: one resource, two possible uses.</figcaption></figure>", "translation": "<p>Figura de demostración original: un recurso, dos usos posibles.</p>"}
+        ]},
+        {"id": "demo-page-2", "label": "Page 2 · Evidence and judgement", "flow": [
+          {"id": "demo-choice-3", "en": "<p>For a simple comparison, let B represent an activity's benefits and C its relevant costs. Its net benefit is:</p><math display=\"block\"><mrow><mi>N</mi><mo>=</mo><mi>B</mi><mo>−</mo><mi>C</mi></mrow></math><p>The calculation depends on what is counted, how it is measured, and whose interests are included.</p>", "translation": "<p>En una comparación sencilla, B representa los beneficios de una actividad y C sus costes relevantes. Su beneficio neto es N = B − C. El cálculo depende de qué se cuenta, cómo se mide y qué intereses se incluyen.</p>"},
+          {"id": "demo-choice-4", "en": "<p>A larger estimated net benefit is useful evidence, but it does not settle every policy question. The town should also consider fairness, uncertainty and whether affected residents had a meaningful opportunity to contribute.</p>", "translation": "<p>Un mayor beneficio neto estimado aporta información útil, pero no resuelve todas las cuestiones de política pública. El pueblo también debería considerar la equidad, la incertidumbre y si los residentes afectados tuvieron una oportunidad real de participar.</p>"}
+        ]}
+      ]
+    },
+    {
+      "id": "DEMO-02", "title": "An optional reading that is not yet available", "author": "Fictional reference",
+      "course": "Example: Public choices", "session": "Example session 1", "status": "Recommended", "source_category": "Further reading",
+      "requirement_basis": "Invented reference for demonstrating coverage labels.", "pages": "Not specified", "content_kind": "reference-only", "access_status": "Full text not available", "translation_coverage": "Only the access note is translated",
+      "units": [{"id": "gap-note", "label": "Access note", "flow": [{"id": "demo-gap-1", "en": "<p>The full text has not been obtained. There is no summary of this fictional source. Add a verified source link and access status when you have real reading instructions.</p>", "translation": "<p>No se ha obtenido el texto completo. No hay un resumen de esta fuente ficticia. Añade un enlace verificado y su estado de acceso cuando tengas instrucciones de lectura reales.</p>"}]}]
+    }
+  ]
+}

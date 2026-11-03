@@ -1,0 +1,1 @@
+Read https://github.com/mashbean/canvas-study-companion/blob/main/START_HERE.md and follow this repository to build my own private Canvas study site, asking for my courses, timetable and preferred language, guiding me through secure API setup, and preparing my first weekly reading pack.

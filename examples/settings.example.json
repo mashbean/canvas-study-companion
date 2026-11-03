@@ -1,0 +1,11 @@
+{
+  "project_id": "my-study-companion",
+  "canvas_url": "https://canvas.example.edu",
+  "timezone": "Europe/London",
+  "language": {"name": "Spanish", "code": "es", "direction": "ltr", "mode": "bilingual-summaries"},
+  "courses": [],
+  "groups": {},
+  "weekly_study_hours": 6,
+  "email_calendar_enabled": false,
+  "automation_enabled": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "canvas_url": "https://canvas.example.edu",
+  "week": "2026-11-02",
+  "timezone": "Europe/London",
+  "teaching_week": 1,
+  "schedule_verified_at": "REPLACE_WITH_ACTUAL_VERIFICATION_TIME",
+  "schedule_source": "REPLACE_WITH_MY_TIMETABLE_SOURCE",
+  "announcements_from": "2026-10-26",
+  "announcements_to": "2026-11-09",
+  "courses": [
+    {"id": 101, "folder": "Example-Course", "module_ids": [201], "pages": [], "file_ids": [], "assignment_ids": [], "group": "CONFIRM_MY_GROUP"}
+  ]
+}

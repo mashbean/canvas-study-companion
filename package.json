@@ -1,0 +1,13 @@
+{
+  "name": "canvas-study-companion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local bilingual reader and read-only Canvas collection workflow",
+  "license": "MIT",
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -p 'test_*.py' && node --test tests/*.test.cjs",
+    "demo": "python3 scripts/build_reader.py examples/demo-pack.json --output site/demo",
+    "preview": "python3 scripts/serve.py --directory site --port 8765"
+  },
+  "devDependencies": {"jsdom": "26.1.0"}
+}
